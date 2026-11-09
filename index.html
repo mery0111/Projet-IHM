@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECYFUN - Apprends à trier tes déchets !</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- En-tête -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">♻️</div>
+                <h1>RECYFUN</h1>
+            </div>
+            <p>Apprends à trier tes déchets en t'amusant !</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <div class="nav-item active" data-target="accueil">Accueil</div>
+            <div class="nav-item" data-target="trier">Jeu de Tri</div>
+            <div class="nav-item" data-target="apprendre">Apprendre</div>
+            <div class="nav-item" data-target="quiz">Quiz</div>
+            <div class="nav-item" data-target="recompenses">Récompenses</div>
+        </div>
+    </nav>
+
+    <!-- Contenu principal -->
+    <main class="container">
+        <!-- Section Accueil -->
+        <section id="accueil" class="section active">
+            <div class="hero">
+                <h2>Bienvenue dans l'univers RECYFUN !</h2>
+                <p>Découvre comment protéger notre planète en apprenant à trier tes déchets correctement. Rejoins nos héros du recyclage et deviens un super éco-citoyen !</p>
+                <div class="hero-image">
+                    <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="50" y="100" width="200" height="80" rx="10" fill="#4CAF50"/>
+                        <rect x="70" y="60" width="160" height="40" rx="5" fill="#795548"/>
+                        <circle cx="100" y="140" r="20" fill="#FFC107"/>
+                        <circle cx="150" y="140" r="20" fill="#2196F3"/>
+                        <circle cx="200" y="140" r="20" fill="#FFEB3B"/>
+                        <text x="150" y="30" text-anchor="middle" fill="#333" font-family="Arial" font-size="16">Recycle avec nous!</text>
+                    </svg>
+                </div>
+            </div>
+
+            <h3 class="section-title">Comment ça marche ?</h3>
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-image">
+                        <svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="280" height="160" fill="#E1F5FE"/>
+                            <circle cx="140" cy="80" r="50" fill="#4CAF50"/>
+                            <path d="M120 70 L140 90 L170 60" stroke="white" stroke-width="8" fill="none" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Apprends les bases</h4>
+                        <p class="card-text">Découvre les différentes catégories de déchets et comment les trier correctement.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="280" height="160" fill="#FFF9C4"/>
+                            <rect x="80" y="40" width="120" height="80" rx="10" fill="#FFC107"/>
+                            <circle cx="110" cy="80" r="15" fill="#795548"/>
+                            <circle cx="170" cy="80" r="15" fill="#2196F3"/>
+                        </svg>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Joue et pratique</h4>
+                        <p class="card-text">Entraîne-toi avec notre jeu de tri interactif pour devenir un expert du recyclage.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="280" height="160" fill="#E8F5E9"/>
+                            <polygon points="140,40 180,120 100,120" fill="#F44336"/>
+                            <circle cx="140" cy="70" r="15" fill="#FFC107"/>
+                        </svg>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Gagne des récompenses</h4>
+                        <p class="card-text">Collectionne des badges en progressant et montre à tes amis que tu es un super héros de la planète !</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Jeu de Tri -->
+        <section id="trier" class="section">
+            <h2 class="section-title">Jeu de Tri des Déchets</h2>
+            <p class="game-instruction">Fais glisser chaque déchet vers la bonne poubelle de recyclage !</p>
+            
+            <div class="bins-container">
+                <div class="bin bin-yellow" data-type="plastique">
+                    <div class="bin-lid"></div>
+                    <div class="bin-body">Plastique</div>
+                </div>
+                <div class="bin bin-blue" data-type="papier">
+                    <div class="bin-lid"></div>
+                    <div class="bin-body">Papier</div>
+                </div>
+                <div class="bin bin-green" data-type="verre">
+                    <div class="bin-lid"></div>
+                    <div class="bin-body">Verre</div>
+                </div>
+                <div class="bin bin-brown" data-type="organique">
+                    <div class="bin-lid"></div>
+                    <div class="bin-body">Organique</div>
+                </div>
+            </div>
+
+            <div class="waste-items">
+                <div class="waste-item" data-type="plastique" draggable="true">🥤</div>
+                <div class="waste-item" data-type="papier" draggable="true">📰</div>
+                <div class="waste-item" data-type="verre" draggable="true">🍾</div>
+                <div class="waste-item" data-type="organique" draggable="true">🍎</div>
+                <div class="waste-item" data-type="plastique" draggable="true">🧴</div>
+                <div class="waste-item" data-type="papier" draggable="true">📦</div>
+            </div>
+
+            <div class="game-controls">
+                <button id="reset-game" class="btn">Recommencer</button>
+            </div>
+
+            <div id="game-feedback" class="feedback"></div>
+        </section>
+
+        <!-- Section Apprendre -->
+        <section id="apprendre" class="section">
+            <h2 class="section-title">Apprends à Recycler</h2>
+            
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-image">
+                        <svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="280" height="160" fill="#FFF9C4"/>
+                            <rect x="100" y="50" width="80" height="60" fill="#FFC107"/>
+                            <rect x="120" y="30" width="40" height="20" fill="#FFC107"/>
+                        </svg>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Le Plastique</h4>
+                        <p class="card-text">Les bouteilles, flacons et emballages en plastique vont dans la poubelle jaune. N'oublie pas de les vider avant de les jeter !</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="280" height="160" fill="#E3F2FD"/>
+                            <rect x="110" y="40" width="60" height="80" fill="#2196F3"/>
+                            <ellipse cx="140" cy="40" rx="30" ry="10" fill="#2196F3"/>
+                        </svg>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Le Papier et le Carton</h4>
+                        <p class="card-text">Les journaux, magazines, cartons et emballages en papier vont dans la poubelle bleue. Pense à les plier pour gagner de la place !</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="280" height="160" fill="#E8F5E9"/>
+                            <rect x="120" y="50" width="40" height="60" fill="#4CAF50"/>
+                            <ellipse cx="140" cy="50" rx="20" ry="10" fill="#4CAF50"/>
+                        </svg>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Le Verre</h4>
+                        <p class="card-text">Les bouteilles, pots et bocaux en verre vont dans la poubelle verte. Attention, la vaisselle et les miroirs ne se recyclent pas !</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="280" height="160" fill="#EFEBE9"/>
+                            <circle cx="140" cy="80" r="40" fill="#795548"/>
+                            <path d="M120 70 L160 90" stroke="#8D6E63" stroke-width="5" fill="none"/>
+                        </svg>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Les Déchets Organiques</h4>
+                        <p class="card-text">Les restes de nourriture, épluchures et déchets de jardin vont dans la poubelle marron. Ils serviront à faire du compost !</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-section">
+                <h3><i>Regarde cette vidéo amusante sur le recyclage !</i></h3> 
+                <video controls width="600"> 
+                    <source src="vid.mp4" type="video/mp4">
+                </video>
+                    <br>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Quiz -->
+        <section id="quiz" class="section">
+            <h2 class="section-title">Quiz Éco-Jeunes</h2>
+            
+            <div class="quiz-container">
+                <div class="quiz-question" id="question">Dans quelle poubelle dois-tu jeter une bouteille en plastique ?</div>
+                
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="true">Poubelle jaune</div>
+                    <div class="quiz-option" data-correct="false">Poubelle bleue</div>
+                    <div class="quiz-option" data-correct="false">Poubelle verte</div>
+                    <div class="quiz-option" data-correct="false">Poubelle marron</div>
+                </div>
+                
+                <div class="quiz-controls">
+                    <div class="quiz-score">Score: <span id="score">0</span>/<span id="total">0</span></div>
+                    <button id="next-question" class="btn">Question suivante</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Récompenses -->
+        <section id="recompenses" class="section">
+            <h2 class="section-title">Tes Récompenses</h2>
+            <p class="rewards-description">Collectionne tous les badges en apprenant à recycler !</p>
+            
+            <div class="badges-container">
+                <div class="badge">
+                    <div class="badge-icon">🥇</div>
+                    <div class="badge-name">Premier Pas</div>
+                </div>
+                <div class="badge locked">
+                    <div class="badge-icon">♻️</div>
+                    <div class="badge-name">Expert Recyclage</div>
+                </div>
+                <div class="badge locked">
+                    <div class="badge-icon">🌍</div>
+                    <div class="badge-name">Protecteur Planète</div>
+                </div>
+                <div class="badge locked">
+                    <div class="badge-icon">⭐</div>
+                    <div class="badge-name">Super Éco-Héros</div>
+                </div>
+            </div>
+            
+            <div class="congratulations">
+                <h3>Félicitations !</h3>
+                <p>Tu as déjà débloqué ton premier badge. Continue à apprendre pour débloquer les autres !</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pied de page -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Éco-Jeunes</h3>
+                    <p>Une application ludique pour apprendre le tri des déchets aux enfants.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: contact@eco-jeunes.fr</p>
+                    <p>Téléphone: 0 41 23 18 43</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Ressources</h3>
+                    <p><a href="#" class="footer-link">Guide du recyclage</a></p>
+                    <p><a href="#" class="footer-link">Jeux éducatifs</a></p>
+                    <p><a href="#" class="footer-link">Espace parents</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Éco-Jeunes - Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
